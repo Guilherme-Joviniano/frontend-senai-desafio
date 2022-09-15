@@ -1,0 +1,55 @@
+header {
+    width: 100vw;
+    height: 100px;
+    background: var(--main-blue);
+}
+
+.container {
+    width: 100vw;
+    height: calc(100vh - 240px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container .child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 44px;
+}
+
+.container .child:nth-child(1) h2 {
+    font-family: 'Roboto';
+    font-size: 57px;
+    font-weight: 300;
+    max-width: 450px;
+    color: var(--title-color);
+}
+
+.container .child:nth-child(1) span {
+    font-weight: bolder;
+    color: var(--main-blue);
+}
+
+.container .child .card-course {
+    cursor:  pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    height: 200px;
+    background: var(--main-blue);
+    border: 1px solid #000000;
+    box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
+}
+
+.container .child .card-course .title {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 64px;
+    color: #FFF;
+}
+.container .child .card-course img {
+    width: 96px;
+}
