@@ -4,7 +4,8 @@ import fetchStudents from "../../helpers/fetchStudents.js"
 class Panel {
     render = async (courseId) => {
         const response = await fetchStudents(courseId);
-        console.log(response);
+        const { message } = response;
+        createStundentCards(message);
     }
 }
 
