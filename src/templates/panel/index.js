@@ -1,5 +1,6 @@
 // render the template!
 import fetchStudents from "../../helpers/fetchStudents.js"
+import createStundentCards from './components/StudentCard/index.js'
 
 class Panel {
     render = async (courseId) => {
