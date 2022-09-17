@@ -1,6 +1,5 @@
 import fetchCourse from '../../helpers/fetchCourse.js';
 import createCard from './components/Card/index.js';
-import panel from '../panel/index.js'
 
 const initCoursesCards = async () => {
     const response = await fetchCourse();
@@ -10,7 +9,12 @@ const initCoursesCards = async () => {
 
 const handleClickCard = async ({ target }) => {
     const { id } = target;
-    await panel.render(id.toLowerCase()); // render the panel template data 
+
+    if(!id) return; 
+    
+    location.href = '/panel.html'
+
+    localStorage.setItem('courseID', id) 
 }
 
 await initCoursesCards(); // main template

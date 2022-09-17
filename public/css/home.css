@@ -1,3 +1,4 @@
+@import url('./root.css');
 
 .container {
     width: 100vw;
@@ -28,6 +29,7 @@
 }
 
 .container .child .card-course {
+    z-index: 99;
     cursor:  pointer;
     display: flex;
     align-items: center;
@@ -44,7 +46,9 @@
     font-weight: 500;
     font-size: 64px;
     color: #FFF;
+    pointer-events: none;
 }
 .container .child .card-course img {
+    pointer-events: none;
     width: 100px;
 }

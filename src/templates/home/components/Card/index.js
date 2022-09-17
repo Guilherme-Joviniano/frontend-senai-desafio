@@ -17,7 +17,9 @@ const createCard = (courses) => {
         div.append(title)
         div.append(img)
 
+
         container.append(div)
+        
     });
 }
 
