@@ -17,9 +17,7 @@ const addQueries = (baseURL, queries) => {
 const fetchStudents = async (courseId, queries = {}) => {
     let url = app.baseURL + 'students/' + `?course=${courseId}` // default url
 
-    url = addQueries(url, queries); // update the url with the queries
-
-    console.log(url);
+    url = addQueries(url, queries); // update the url with the queries  
 
     const response = await fetch(url);
     const json = await response.json();    

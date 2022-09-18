@@ -40,6 +40,17 @@ class Panel {
         if (id === 'finalizado') return this.render({ status: 'finalizado'});
         if (id === 'cursando') return this.render({ status: 'cursando'});
     }
+    handleClickCard = ({ target }) => {
+        const { id } = target;
+        
+        if(!id) return;
+        
+        console.log(id);
+        
+        localStorage.setItem('studentID', id);
+        
+        return location.href='/detail.html'
+    } 
 }
 
 const course = localStorage.getItem('courseID');
@@ -47,7 +58,11 @@ const panel = new Panel(course.toLowerCase());
 
 const filters = document.querySelectorAll('.filter-links')
 
+// add the filters addEventListener
 filters.forEach((filter) => filter.addEventListener('click', panel.updatePanel))
 
-
 await panel.render(course.toLowerCase()); // render the panel template data
+
+const cards = document.querySelectorAll('.card');
+// add the addEventListener in each student card
+cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
