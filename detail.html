@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/e2a54895da.js" crossorigin="anonymous"></script>
-    <script src="./src/templates/panel/index.js" defer type="module"></script>
+    <script src="./src/templates/detail/index.js" defer type="module"></script>
     <link rel="stylesheet" href="./public/css/global.css">
-    <link rel="stylesheet" href="./public/css/navbar.css">
+    <link rel="stylesheet" href="./public/css/detail.css">
     <link rel="stylesheet" href="./public/css/footer.css">
-    <link rel="stylesheet" href="./public/css/panel.css">
-
-    <title>Lion School Students Panel</title>
+    <link rel="stylesheet" href="./public/css/navbar.css">
+    <title>Lion School</title>
 </head>
 
 <body>
@@ -22,34 +21,19 @@
                 <li class="logo"><img src="./public/imgs/logo-image.png" alt="">
                     <div><span>Lion</span> <span>School</span></div>
                 </li>
-                <li class="link-sing-out"><img src="./public/imgs/sair-vector.png" alt="">
-                    <span>
-                        <a href="./index.html">Sair</a>
-                    </span>
-                </li>
+                <li class="link-sing-out"><img src="./public/imgs/sair-vector.png" alt=""><span>Sair</span></li>
             </ul>
         </nav>
-        <div class="filter-nav">
-            <div class="drop-down">
-                <span class="filter-links" id="pre-filter">Status</span>
-                <div class="drop-down-menu"> 
-                    <span class="filter-links" id="status">Status <i class="fa-solid fa-check "></i></span>
-                    <span class="filter-links" id="cursando">Cursando <i class="fa-solid fa-check hide"></i></span>
-                    <span class="filter-links" id="finalizado">Finalizado <i class="fa-solid fa-check hide"></i></span>
-                </div>
-            </div>
-
-            <div class="filter-caption">
-                <span>LEGENDA</span>
-                <span>Cursando</span>
-                <span>Finalizado</span>
-            </div>
-        </div>
     </header>
     <main>
-        <div class="panel-container">
-            <div class="course-name-wrapper"><h2 class="course-name"></h2></div>
-           <div class="container-cards"></div> 
+        <div class="container-detail">
+            <div class="student-profile">
+                <span><img class ='picture' src="" alt=""></span>
+                <span><h3 class="name"></h3></span>
+            </div>
+            <div class="student-graph-grades">
+                
+            </div>
         </div>
     </main>
     <footer>

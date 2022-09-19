@@ -1,4 +1,124 @@
-.container {
-    width: 100vw;
+@import url('./root.css');
+
+* {
+    font-family: 'Roboto';
+}
+
+.panel-container {
+    position: relative;
+    top: 60px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+}
+
+
+
+.filter-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 50px;
+    background: var(--secondary-blue);
+}
+
+.drop-down {
+    margin-left: 96px;
+}
+
+.drop-down:hover .drop-down-menu {
+    display: flex;
+}
+
+.drop-down-menu {
+    display: none;
+    position: absolute;
+    background: var(--main-blue);
+    min-width: 150px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    color: #FFF;
+}
+
+.drop-down-menu span {
+    cursor: pointer;
+}
+
+.filter-caption {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-right: 96px;
+}
+
+.filter-caption span {
+    font-weight: bolder;
+    color: var(--main-blue);
+}
+
+.filter-caption span:nth-child(2),
+.filter-caption span:nth-child(3) {
+    display: flex;
+    align-items: center;
+}
+
+.filter-caption span:nth-child(2)::before,
+.filter-caption span:nth-child(3)::before {
+    display: inline-block;
+    position: relative;
+    right: 8px;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: var(--main-blue);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.filter-caption span:nth-child(3)::before {
+    background: var(--yellow);
+}
+
+
+.container-cards {
+    display: flex;
+    max-width: 1400px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 62px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.card h3 {
+    text-align: center;
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 12px;
+}
+.card img {
+    max-width: 90%;
+}
+/* css class used in js*/
+.cursando {
+    background: var(--main-blue);
+}
+
+.finalizado {
+    background: var(--yellow);
+}
+
+.hide {
+    display: none;
 }

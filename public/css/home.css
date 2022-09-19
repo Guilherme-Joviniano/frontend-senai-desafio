@@ -1,3 +1,4 @@
+@import url('./root.css');
 
 .container {
     width: 100vw;
@@ -28,12 +29,13 @@
 }
 
 .container .child .card-course {
+    z-index: 99;
     cursor:  pointer;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
     background: var(--main-blue);
     border: 1px solid #000000;
     box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
@@ -42,9 +44,11 @@
 .container .child .card-course .title {
     font-family: 'Roboto';
     font-weight: 500;
-    font-size: 72px;
+    font-size: 64px;
     color: #FFF;
+    pointer-events: none;
 }
 .container .child .card-course img {
+    pointer-events: none;
     width: 100px;
 }

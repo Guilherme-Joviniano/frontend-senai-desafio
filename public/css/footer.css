@@ -1,3 +1,4 @@
+@import url('./root.css');
 
 footer {
     display: flex;
@@ -7,8 +8,11 @@ footer {
     justify-content: space-around;
     width: 100vw;
     height: 140px;
+    position: absolute;
+    bottom: 0;
     background: var(--main-blue);
 }
+
 footer .contacts {
     font-size: 20px;
     display: flex;
