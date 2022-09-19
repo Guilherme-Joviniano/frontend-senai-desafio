@@ -23,6 +23,7 @@ const createStundentCards = (students) => {
         // add the student picture
         const picture = document.createElement('img');
         picture.src = foto
+        picture.referrerPolicy = 'no-referrer'
 
         // add the student name
         const studentName = document.createElement('h3');

@@ -14,8 +14,6 @@ const render = async (id) => {
     
 }
 
-
-
 const studentId = localStorage.getItem('studentID');
 
 await render(studentId);
