@@ -1,6 +1,7 @@
 // render the template!
 import fetchStudents from "../../helpers/fetchStudents.js"
 import createStundentCards from './components/StudentCard/index.js'
+import renderYearMenu from './components/YearMenu/index.js';
 
 class Panel {
     
@@ -10,9 +11,13 @@ class Panel {
     
     sanitize () {
         const cards = document.querySelectorAll('.card');
+        const filters = document.querySelectorAll('.filter-links-year')
+        
         if (cards) {
             cards.forEach(card => card.remove());
+            filters.forEach(filter => filter.remove())
         }
+        
     }
     
     render = async (filter = {}) => {
@@ -20,12 +25,23 @@ class Panel {
         this.sanitize();
 
         const response = await fetchStudents(this.courseId, filter);
+        
         const { message } = response;
 
         const title = message[0].curso[0].nome
         
         this.addTitle(title);
         createStundentCards(message);
+        await renderYearMenu(this.courseId)
+        
+        const filterYears = document.querySelectorAll('.filter-links-year');
+        filterYears.forEach((filter) => filter.addEventListener('click', panel.updatePanel))
+
+                
+        const cards = document.querySelectorAll('.card');
+        // add the addEventListener in each student card
+        cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
+
     }
     
     addTitle = (value) => {
@@ -35,36 +51,30 @@ class Panel {
     }
     updatePanel = async ({ target }) => {
         const { id } = target;
+        
         const icon = target.childNodes[1]
 
         document.querySelectorAll('.fa-check').forEach((el) => el.classList.add('hide'))
-        
-        console.log(icon);
-        icon.classList.remove('hide')
+
+        if (icon) icon.classList.remove('hide')
 
         if (id === 'status') { 
             await this.render();
-            
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
-
             return;
         }
         if (id === 'finalizado') {
             await this.render({ status: 'finalizado'});            
-            
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
-            
             return;
         }
         if (id === 'cursando') {
             await this.render({ status: 'cursando'});
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
-             
             return;
         }
+        else {
+            await this.render({ year: id });
+            return;
+        }
+        
     }
     handleClickCard = ({ target }) => {
         let { id } = target;
@@ -83,13 +93,9 @@ class Panel {
 const course = localStorage.getItem('courseID');
 const panel = new Panel(course.toLowerCase());
 
-const filters = document.querySelectorAll('.filter-links')
 
+const filters = document.querySelectorAll('.filter-links')
 // add the filters addEventListener
 filters.forEach((filter) => filter.addEventListener('click', panel.updatePanel))
 
 await panel.render(course.toLowerCase()); // render the panel template data
-
-const cards = document.querySelectorAll('.card');
-// add the addEventListener in each student card
-cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
