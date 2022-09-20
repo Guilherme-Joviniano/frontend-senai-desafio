@@ -33,20 +33,47 @@ class Panel {
         const courseName = document.querySelector('.course-name');
         courseName.textContent = title;
     }
-    updatePanel = ({ target }) => {
+    updatePanel = async ({ target }) => {
         const { id } = target;
+        const icon = target.childNodes[1]
 
-        if (id === 'status') return this.render();
-        if (id === 'finalizado') return this.render({ status: 'finalizado'});
-        if (id === 'cursando') return this.render({ status: 'cursando'});
+        document.querySelectorAll('.fa-check').forEach((el) => el.classList.add('hide'))
+        
+        console.log(icon);
+        icon.classList.remove('hide')
+
+        if (id === 'status') { 
+            await this.render();
+            
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
+
+            return;
+        }
+        if (id === 'finalizado') {
+            await this.render({ status: 'finalizado'});            
+            
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
+            
+            return;
+        }
+        if (id === 'cursando') {
+            await this.render({ status: 'cursando'});
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => card.addEventListener('click', panel.handleClickCard))
+             
+            return;
+        }
     }
     handleClickCard = ({ target }) => {
-        const { id } = target;
+        let { id } = target;
+        const parentId = target.parentElement.id
         
-        if(!id) return;
-        
-        console.log(id);
-        
+        if(!id) {
+            id = parentId
+        }
+
         localStorage.setItem('studentID', id);
         
         return location.href='/detail.html'
