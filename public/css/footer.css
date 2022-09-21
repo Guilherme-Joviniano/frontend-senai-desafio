@@ -42,4 +42,10 @@ footer .container-social-media-icons .social-media-icon {
     border-radius: 50%;
     padding: 16px;
     border: 2px solid #FFF;
+    transition: 500ms all ease-in-out;
+}
+
+footer .container-social-media-icons .social-media-icon:hover{
+    color: var(--main-blue);
+    background: #FFF;
 }
