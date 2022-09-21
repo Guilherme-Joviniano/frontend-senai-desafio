@@ -38,9 +38,13 @@
     height: 200px;
     background: var(--main-blue);
     border: 1px solid #000000;
-    box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
+    transition: 500ms all ease-in-out;
+    border-radius: 12px;
 }
-
+.container .child .card-course:hover {
+    box-shadow: 12px 12px 4px rgba(51, 71, 176, 0.5);
+    transform: scale(1.1);
+}
 .container .child .card-course .title {
     font-family: 'Roboto';
     font-weight: 500;
