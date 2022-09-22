@@ -12,7 +12,7 @@ const handleClickCard = async ({ target }) => {
 
     if(!id) return; 
     
-    location.href = '/panel.html'
+    location.href = '/frontend-senai-desafio/panel.html'
 
     localStorage.setItem('courseID', id) 
 }

@@ -86,7 +86,7 @@ class Panel {
 
         localStorage.setItem('studentID', id);
         
-        return location.href='/detail.html'
+        return location.href='/frontend-senai-desafio/detail.html'
     } 
 }
 
