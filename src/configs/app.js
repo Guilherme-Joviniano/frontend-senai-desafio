@@ -1,3 +1,3 @@
 export default {
-    baseURL: 'http://localhost:3333/'
+    baseURL: 'https://api-senai.netlify.app/.netlify/functions/api/'
 }
