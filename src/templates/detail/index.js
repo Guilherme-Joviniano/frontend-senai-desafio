@@ -4,7 +4,6 @@ import renderGrades from './components/Grades/index.js'
 
 const render = async (id) => {
     const response = await fetchStudents(id);
-    console.log(response);
     
     const { curso, nome, foto } = response.message;
     const { disciplinas } = curso[0];
