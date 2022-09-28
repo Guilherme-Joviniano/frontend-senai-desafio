@@ -57,3 +57,12 @@
     pointer-events: none;
     width: 100px;
 }
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .container .child:nth-child(1), .child:nth-child(2) {
+        display: none;
+    }
+}

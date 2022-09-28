@@ -54,3 +54,9 @@ header {
     backdrop-filter: blur( 4px );
 
 }
+
+@media (max-width: 900px) {
+    .navbar .link-sing-out {
+        display: none;
+    }
+}

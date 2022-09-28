@@ -99,3 +99,20 @@ const filters = document.querySelectorAll('.filter-links')
 filters.forEach((filter) => filter.addEventListener('click', panel.updatePanel))
 
 await panel.render(course.toLowerCase()); // render the panel template data
+
+
+// menu burguer 
+document.querySelector('.menu-burguer').addEventListener('click', (e) => {
+    e.preventDefault();
+    const nav = document.querySelector('.filter-nav');
+    const panel = document.querySelector('.panel-container')
+    
+    if (nav.classList.contains('open')) { 
+        nav.classList.remove('open')
+        panel.classList.remove('open')
+    }
+    else { 
+        nav.classList.add('open')
+        panel.classList.add('open')
+    }
+})
